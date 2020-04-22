@@ -40,6 +40,9 @@ scaler = StandardScaler()
 scaler.fit(X)
 X = scaler.transform(X)
 
+filename = 'scaler.sav'
+pickle.dump(scaler, open(filename, 'wb'))
+
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=1)
 
