@@ -20,7 +20,7 @@
 <li>Data Standardisation</li>
 <li>Splitting Dataset into Training Set and Testing Set</li>
 <li>Build SVM Model with Default Hyperparameter</li>
-<li>Accuracy Score :0.85</li>
+<li>Accuracy Score : <b>0.85</b></li>
 <li>Save/Load Model</li>
-<li>Create Predict Service</li>
+<li>Create Predict Service <b>(Using Flask)</b></li>
 </ol>
