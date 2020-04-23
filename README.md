@@ -1,5 +1,10 @@
 # Titanic Machine Learning Model to Predict Service
 <b>Used Programming Language :Python</b><br>
+## Requirements ;
+<code>pip install numpy</code><br>
+<code>pip install flask</code><br>
+<code>pip install sklearn</code><br>
+<code>pip install pandas</code><br><br>
 <b>Used Libraries</b>
 <ol>
  <li>NumPy (Numerical Python)</li>
