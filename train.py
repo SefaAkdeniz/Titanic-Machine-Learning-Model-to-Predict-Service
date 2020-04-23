@@ -4,10 +4,9 @@ Created on Tue Apr 21 19:59:52 2020
 
 @author: sefa
 """
-
 import pandas as pd
 import numpy as np
-import pickle
+from sklearn.externals import joblib
 
 train_df = pd.read_csv("train.csv")
 test_df = pd.read_csv("test.csv")
@@ -40,19 +39,17 @@ scaler = StandardScaler()
 scaler.fit(X)
 X = scaler.transform(X)
 
-filename = 'scaler.sav'
-pickle.dump(scaler, open(filename, 'wb'))
+joblib.dump(scaler, 'scaler.pkl') 
 
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
 from sklearn.svm import SVC
 svc = SVC(C=525,gamma=0.01)
 svc.fit(X_train,y_train)
 y_pred = svc.predict(X_test)
 
-filename = 'finalized_model.sav'
-pickle.dump(svc, open(filename, 'wb'))
+joblib.dump(svc, 'model.pkl') 
 
 from sklearn import metrics
 print('Accuracy Score:')

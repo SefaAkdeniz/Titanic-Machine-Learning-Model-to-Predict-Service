@@ -4,12 +4,13 @@ Created on Wed Apr 22 19:09:25 2020
 
 @author: sefa
 """
-
-import numpy as np
 import pandas as pd
-import pickle
 from flask import Flask
 from flask import jsonify
+from sklearn.externals import joblib
+
+scaler = joblib.load('scaler.pkl')
+model = joblib.load('model.pkl')
 
 app = Flask(__name__)
 
@@ -24,14 +25,9 @@ def index(Pclass,Sex,Age,SibSp,Parch,Fare,Embarked):
         elif Embarked == "S":
             array=pd.DataFrame([[Pclass,Sex,Age,SibSp,Parch,Fare,0,0,1]])
             
-        scaler = pickle.load(open("scaler.sav", 'rb'))
-        array = scaler.transform(array)
-        
-        model = pickle.load(open("finalized_model.sav", 'rb'))
-        print(type(model))
-        print(type(model.predict(array)[0]))
-        
+        array = scaler.transform(array)                  
         return jsonify(str(model.predict(array)[0]))
+    
     except:
         return jsonify(str("Hata"))
            
