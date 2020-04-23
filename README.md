@@ -17,4 +17,5 @@
 <li>Build SVM Model with Default Hyperparameter</li>
 <li>Accuracy Score</li>
 <li>Save/Load Model</li>
+<li>Create Predict Service</li>
 </ol>
