@@ -32,4 +32,4 @@ def index(Pclass,Sex,Age,SibSp,Parch,Fare,Embarked):
         return jsonify(str("Hata"))
            
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
