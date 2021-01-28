@@ -1,4 +1,4 @@
-# Titanic Machine Learning Model to Predict Service
+# Titanic Machine Learning Predict Machine Learning SVC
 <b>Used Programming Language :Python</b><br>
 ## Requirements ;
 <code>pip install numpy</code><br>
